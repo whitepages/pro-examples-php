@@ -1,4 +1,5 @@
-# PHP
+# Whitepages Pro Code Examples in PHP [![Build Status](https://travis-ci.org/whitepages/pro-examples-php.svg?branch=master)](https://travis-ci.org/whitepages/pro-examples-php)
+
 
 ## Install
 
