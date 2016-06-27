@@ -5,3 +5,4 @@ install: composer install
 script:
   - php lead_verify.php
   - php identity_check.php
+  - php caller_identification.php
