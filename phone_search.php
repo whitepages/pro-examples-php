@@ -2,7 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-$url     = 'https://proapi.whitepages.com/3.0/phone;
+$url     = 'https://proapi.whitepages.com/3.0/phone';
 $headers = ['Accept' => 'application/json'];
 $query   = [
             'phone'                  => '6464806649',
