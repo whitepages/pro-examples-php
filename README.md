@@ -16,7 +16,7 @@ Run examples by simply typing php and the example file you wish to run.
 ```shell
 php lead_verify.php
 php identity_check.php
-php caller_identification.php
+php phone_search.php
 ```
 
 [Composer]: https://getcomposer.org/
