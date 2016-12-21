@@ -2,7 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-$url     = 'https://proapi.whitepages.com/3.1/lead_verify.json';
+$url     = 'https://proapi.whitepages.com/3.3/lead_verify.json';
 $headers = ['Accept' => 'application/json'];
 $query   = [
             'name'                  => 'Drama Number',
@@ -10,7 +10,8 @@ $query   = [
             'email_address'         => 'medjalloh1@yahoo.com',
             'address_city'          => 'Ashland',
             'address.postal_code'   => '59004',
-            'address.state_code'         => 'MT',
+            'address.state_code'    => 'MT',
+            'address.country_code'  => 'US',
             'address.street_line_1' => '302 Gorham Ave',
             'ip_address'            => '108.194.128.165',
             'api_key'               => getenv('LEAD_VERIFY_API_KEY'),
@@ -19,7 +20,6 @@ $query   = [
 $response = Unirest\Request::get($url, $headers, $query);
 
 $available_checks = [
-                     'name_checks',
                      'phone_checks',
                      'address_checks',
                      'email_address_checks',
