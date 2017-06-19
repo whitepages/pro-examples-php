@@ -2,36 +2,35 @@
 
 require_once 'vendor/autoload.php';
 
-$url     = 'https://proapi.whitepages.com/3.1/identity_check.json';
+$url     = 'https://proapi.whitepages.com/3.2/identity_check.json';
 $headers = ['Accept' => 'application/json'];
 $query   = [
-            'billing.name'                   => 'Drama Number',
-            'billing.phone'                  => '6464806649',
-            'billing.address.street_line_1'  => '302 Gorham Ave',
-            'billing.address.city'           => 'Ashland',
-            'billing.address.state_code'     => 'MT',
-            'billing.address.postal_code'    => '59004',
-            'billing.address.country_code'   => 'US',
-            'shipping.name'                  => 'Drama Number',
-            'shipping.phone'                 => '6464806649',
-            'shipping.address.street_line_1' => '302 Gorham Ave',
-            'shipping.address.city'          => 'Ashland',
-            'shipping.address.state_code'    => 'MT',
-            'shipping.address.postal_code'   => '59004',
-            'shipping.address.country_code'  => 'US',
-            'email_address'                  => 'medjalloh1@yahoo.com',
-            'ip_address'                     => '64.124.61.215',
-            'api_key'                        => getenv('ID_CHECK_API_KEY'),
+            'primary.name'                    => 'Drama Number',
+            'primary.phone'                   => '6464806649',
+            'primary.address.street_line_1'   => '302 Gorham Ave',
+            'primary.address.city'            => 'Ashland',
+            'primary.address.state_code'      => 'MT',
+            'primary.address.postal_code'     => '59004',
+            'primary.address.country_code'    => 'US',
+            'secondary.name'                  => 'Drama Number',
+            'secondary.phone'                 => '6464806649',
+            'secondary.address.street_line_1' => '302 Gorham Ave',
+            'secondary.address.city'          => 'Ashland',
+            'secondary.address.state_code'    => 'MT',
+            'secondary.address.postal_code'   => '59004',
+            'secondary.address.country_code'  => 'US',
+            'email_address'                   => 'medjalloh1@yahoo.com',
+            'ip_address'                      => '64.124.61.215',
+            'api_key'                         => getenv('ID_CHECK_API_KEY'),
            ];
 
 $response = Unirest\Request::get($url, $headers, $query);
 
 $available_checks = [
-                     'billing_name_checks',
-                     'billing_phone_checks',
-                     'billing_address_checks',
-                     'shipping_name_checks',
-                     'shipping_phone_checks',
+                     'primary_phone_checks',
+                     'primary_address_checks',
+                     'secondary_name_checks',
+                     'secondary_phone_checks',
                      'shipping_address_checks',
                      'email_address_checks',
                      'ip_address_checks',
